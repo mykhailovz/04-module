@@ -6,6 +6,7 @@ import GenreSelect from './components/GenreSelect';
 import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
 import SortControl from './components/SortControl';
+import AddMovie from './components/AddMovie';
 
 function App() {
   const [movie, setMovie] = useState(null);
@@ -80,6 +81,11 @@ function App() {
     console.log('[you select sortBy]: ', sortBy);
   }
 
+
+  function handleAdd() {
+    document.getElementById('add-movie').showModal();
+  }
+
   return (
     <>
       <Counter value={defaultCounterValue} />
@@ -88,6 +94,14 @@ function App() {
       <SortControl onSelect={onSortBySelect} />
       <MovieDetails movie={movie}/>
       <MovieList movies={movies} onSelectMovie={onSelectMovie} />
+
+
+      <h1>Here is a list of modals</h1>
+      <ul>
+        <li onClick={() => handleAdd()}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add Movie Modal</button></li>
+      </ul>
+
+      <AddMovie />
     </>
   );
 }
