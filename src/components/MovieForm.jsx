@@ -22,7 +22,7 @@ export default function MovieForm({modalId, movie, headerText, onClose}) {
     <>
     <div className="flex flex-wrap">
       <h1>{headerText}</h1>
-      <button onClick={onClose} className="ml-20">X</button>
+      <button onClick={onClose} className="ml-20" data-testid='close-movie-form'>X</button>
     </div>
 
     <form id="movie-form" method="post" onSubmit={(e) => handleSubmit(e)}>
@@ -119,6 +119,7 @@ export default function MovieForm({modalId, movie, headerText, onClose}) {
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <button
+            id="submit-movie-form"
             type="submit" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
           >
               Add
