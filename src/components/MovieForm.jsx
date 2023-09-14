@@ -52,7 +52,7 @@ export default function MovieForm({modalId, movie, headerText, onClose}) {
             Movie Url
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             type="text"
             id="movieUrl"
             name="movieUrl"
