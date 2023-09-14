@@ -8,6 +8,7 @@ import MovieDetails from './components/MovieDetails';
 import SortControl from './components/SortControl';
 import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
+import DeleteMovie from './components/DeleteMovie'
 
 function App() {
   const [movie, setMovie] = useState(null);
@@ -91,6 +92,10 @@ function App() {
     document.getElementById('edit-movie').showModal();
   }
 
+  function handleDelete() {
+    document.getElementById('delete-movie').showModal();
+  }
+
   return (
     <>
       <Counter value={defaultCounterValue} />
@@ -105,10 +110,12 @@ function App() {
       <ul>
         <li onClick={() => handleAdd()}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Add Movie Modal</button></li>
         <li onClick={() => handleEdit()}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Edit Movie Modal</button></li>
+        <li onClick={() => handleDelete()}><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Delete Movie Modal</button></li>
       </ul>
 
       <AddMovie />
       <EditMovie movie={movies[0]} />
+      <DeleteMovie />
     </>
   );
 }
